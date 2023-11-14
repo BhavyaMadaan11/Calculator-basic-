@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<style>
+
+  h1{
+      font-size: 50px;
+      font-family: 'Times New Roman', Times, serif;
+  }
+
+  body{
+    background-color: blanchedalmond;
+  }
+  .calculator{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 75px auto;
+    border: 2px solid black;
+    padding: 20px;
+    width: 250px;
+    background-color: rgb(12, 0, 0);
+  }
+
+  .btn{
+    height: 50px;
+    width: 50px; 
+    margin: 1.5px;
+    border: 2px solid black;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    /*color: white;*/
+    background-color: white;
+    /*border-radius: 50%;*/
+    
+  }
+
+  .row{
+    margin: 1.5px;
+  }
+
+  #input{
+    border: 2px solid black;
+    border-radius: 15px;
+    height: 50px;
+    width: 200px;
+    margin-bottom: 10px;
+    font-size: 25px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: right;
+    
+  }
+
+</style>
+<body>
+  <center><h1>Project : Calculator</h1></center>
+  <div class="calculator">
+    <div clas="row">
+      <input type="text" id="input" placeholder="0">
+    </div>
+    <div class="row">
+      <button class="btn" onclick="display('7')">7</button>
+      <button class="btn" onclick="display('8')">8</button>
+      <button class="btn" onclick="display('9')">9</button>
+      <button class="btn" onclick="display('*')">X</button>
+    </div>
+    <div class="row">
+      <button class="btn" onclick="display('4')">4</button>
+      <button class="btn" onclick="display('5')">5</button>
+      <button class="btn" onclick="display('6')">6</button>
+      <button class="btn" onclick="display('-')">-</button>
+    </div>
+    <div class="row">
+      <button class="btn" onclick="display('1')">1</button>
+      <button class="btn" onclick="display('2')">2</button>
+      <button class="btn" onclick="display('3')">3</button>
+      <button class="btn" onclick="display('+')">+</button>
+    </div>
+    <div class="row">
+      <button class="btn" onclick="clearScreen()">C</button>
+      <button class="btn" onclick="display('0')">0</button>
+      <button class="btn" onclick="calculation()">=</button>
+      <button class="btn" onclick="display('/')">/</button>
+    </div>
+  </div>
+  
+  <script>
+    var inp=document.getElementById('input');
+    function display(val){
+      inp.value += val;
+    }
+
+    function clearScreen()
+    {
+       inp.value = "";
+    }
+
+    function calculation()
+    {
+        var str=inp.value;
+        var result=eval(str);
+        inp.value=result;
+    }
+    
+  </script>
+</body>
+</html>
